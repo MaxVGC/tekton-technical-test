@@ -6,7 +6,6 @@ services:
     ports:
       - 8080:8080
     environment:
-      - PORT=8080
       - DB_USERNAME=devuser
       - DB_PASSWORD=devpassword
       - DB_URL=jdbc:postgresql://postgres:5432/devdb
@@ -18,7 +17,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data
+      - /apps/redis:/data
   postgres:
     image: postgres:14-alpine
     volumes:
